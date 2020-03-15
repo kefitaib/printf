@@ -1,6 +1,7 @@
-#ifndef printf
-#define printf
+#ifndef pri
+#define pri
 #include <stdarg.h>
+#include <stdio.h>
 
 /**
  * struct f - Struct f
