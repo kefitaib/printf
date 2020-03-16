@@ -10,17 +10,13 @@
  */
 
 
-void charPrint(va_list l, char *buffer, int *k)
+void charPrint(va_list l, char *buffer, int *k, int *len)
 {
-	int t = *k;
+	if (*k == 1024)
+		*len += clearBuffer(buffer, k);
 
-	if (t < 1024)
-	{
-		buffer[t] = va_arg(l, int);
-		*k = t + 1;
-	}
-	else
-		return;
+	buffer[*k] = va_arg(l, int);
+	*k += 1;
 }
 
 
@@ -32,19 +28,20 @@ void charPrint(va_list l, char *buffer, int *k)
  * Return : void.
  */
 
-void stringPrint(va_list l, char *buffer, int *k)
+void stringPrint(va_list l, char *buffer, int *k, int *len)
 {
 	char *s;
 	int j;
-	int t = *k;
 
 	s = va_arg(l, char *);
 	if (s)
 	{
-		for (j = 0; s[j] != '\0' && t < 1024; j++, t++)
-			buffer[t] = s[j];
-		*k = t;
+		for (j = 0 ; s[j] != '\0' ; j++, *k += 1)
+		{
+			if (*k == 1024)
+				*len += clearBuffer(buffer, k);
+
+			buffer[*k] = s[j];
+		}
 	}
-	else
-		return;
 }

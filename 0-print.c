@@ -13,7 +13,7 @@
 int _printf(const char *format, ...)
 {
 	va_list list;
-	int k = 0, *kk = &k;
+	int k = 0, *kk = &k, len = 0;
 	char *buffer;
 	f_t form[] = {
 		{"c", charPrint},
@@ -28,9 +28,9 @@ int _printf(const char *format, ...)
 	buffer = malloc(1024);
 	if (!buffer)
 		return (-1);
-	fillbuffer(format, form, list, buffer, kk);
+	len = fillbuffer(format, form, list, buffer, kk);
 	write(1, buffer, k);
 	free(buffer);
 	va_end(list);
-	return (k);
+	return (len);
 }
