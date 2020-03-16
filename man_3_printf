@@ -1,0 +1,110 @@
+.Dd 16/03/2020        
+.Dt _PRINTF      \" Program name and manual section number
+.Os
+.Sh NAME                 
+.Nm _printf
+.Nd a function that produces output according to a format.
+.Sh LIBRARY              \" Section Header - required - don't modify
+.Nd Our holberton.h 
+.Sh SYNOPSIS             \" Section Header - required - don't modify
+.Nm #include "holberton.h"
+.Nm int _printf(const char *format, ...);
+.Sh DESCRIPTION          \" Section Header - required - don't modify
+_printf() function takes 2 arguments: a string called format,\
+and a variable that contains an arguments list': arg_list.\ 
+_printf() passes to a function called fillbuffer() a couple of arguments\ 
+the string format that will be passed as her own first argument\
+a structure : that contains on each element a character that will be compared\
+to the specifier (that comes after '%') inside the format string and for every specifier our\ structure has the adequate 
+function to print it which is indicated with the '%' symbol. If found. _printf() uses the \
+pointer to that specifier function to call the specifier function on the next\
+queued argument from the arg_list. Each specifier function stores a character\
+in a string variable that has for maximum size 1024 bytes. every time we store\ 
+a charcater we test if our buffer has reached its size limit if so\
+we write tp the output the 1024 charcter our buffer string contains and we reset the buffer\ 
+index to 0 to continue filling it with other charcaters \
+once finished with the fillbuffer() function out printf returns the number of characters\ 
+that we have written to the standard output .\
+
+.TH
+
+.Nm THE FLAG CHARACTERS
+.SH ""
+
+Flag characters are still under developpement
+
+.SH THE LENGTH MODIFIERS
+.SH ""
+
+Length modifiers are still under developpement
+
+.SH THE CONVERSION SPECIFIERS
+.SH ""
+
+.RS
+Current arguments handled by conversion specifiers:
+
+.IT
+.B c
+- The integer or char argument converts to an unsigned char, and the resulting \
+character is written.
+
+.IT
+.B s
+- The argument shall be a literal string. No special provisions are made for \
+multibyte characters.The behavior of printf with the s conversion specifier \
+is undefined if the argument value is not a pointer to a literal string. \
+Characters from the literal string array are written up to, but not including, \
+the terminating null byte ('\0').
+
+.IT
+.B %
+- A % character is written and no argument is converted. The complete \
+conversion specification is '%%'.
+
+.IT
+.B b
+- The unsigned int argument is converted to binary.
+
+.IT
+.B d, i
+- The int argument is converted to signed decimal notation.
+
+.IT
+.B p
+- The pointer is printed in hexidecimal format preceded by '0x'.
+
+.IT
+.B r, R
+- 'r' prints string in reverse. 'R' prints encrypted rot13.
+
+.IT
+
+.B o, u, x, X
+- The unsigned int argument is converted to unsigned octal (o), unsigned \
+decimal (u), or unsigned hexidecimal notation (x or X); the letters abcdef are \
+used for x conversion and the letters ABCDEF for X conversion.
+
+.IT
+.B S
+- Prints ascii characters #32 - #127 as they appear in the argument string. \
+All other ascii characters are converted to hexidecimal, then written to \
+standard output.
+
+
+.P
+
+.SH "SEE ALSO"
+.SH ""
+
+.BR printf(1),
+.BR asprintf(3),
+.BR dprintf(3),
+.BR scanf(3),
+
+
+.P
+
+.SH "AUTHOR"
+.SH ""
+Yacine kedidi && Taib kefi
