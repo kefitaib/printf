@@ -13,11 +13,17 @@
 
 void charPrint(va_list l, char *buffer, int *k, int *len)
 {
+	char c;
+
 	if (*k == 1024)
 		*len += clearBuffer(buffer, k);
 
-	buffer[*k] = va_arg(l, int);
-	*k += 1;
+	c = va_arg(l, int);
+	if (c != NULL)
+	{
+		buffer[*k] = c;
+		*k += 1;
+	}
 }
 
 
