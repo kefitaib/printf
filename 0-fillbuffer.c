@@ -27,10 +27,6 @@ int fillbuffer(const char *format, f_t form[], va_list list, char *buffer,
 		}
 		if (format[i] == '%')
 		{
-			if (format[i + 1] == ' ')
-				i++;
-			while (format[i] == ' ')
-				i++;
 			if (format[i] != '%')
 			{
 				j = 0;
