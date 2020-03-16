@@ -7,7 +7,7 @@
  * @form : strusture that contain fonctions.
  * @list : list of arguments.
  * @buffer : string to prints.
- * @k : index of the first empty case.
+ * @kk : index of the first empty case.
  * Return: void.
  */
 
@@ -16,7 +16,6 @@ int fillbuffer(const char *format, f_t form[], va_list list, char *buffer,
 	       int *k)
 {
 	int i = 0, j, len = 0, *lenp = &len;
-
 
 	while (format[i] != '\0')
 	{
@@ -29,7 +28,11 @@ int fillbuffer(const char *format, f_t form[], va_list list, char *buffer,
 		}
 		if (format[i] == '%')
 		{
-			if (format[i + 1] != '%')
+			if (format[i + 1] == ' ')
+				i++;
+				while (format[i] == ' ')
+					i++;
+			if (format[i] != '%')
 			{
 				j = 0;
 				while (form[j].fo)
@@ -48,7 +51,6 @@ int fillbuffer(const char *format, f_t form[], va_list list, char *buffer,
 			{
 				buffer[*k] = '%';
 				*k = *k + 1;
-				i++;
 			}
 			i++;
 		}
