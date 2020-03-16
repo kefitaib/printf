@@ -74,8 +74,6 @@ int integerPrint(va_list l, char *buffer, int *k, int *len)
 	int i = 0, j, n, n2, tmp = 0;
 
 	n = va_arg(l, int);
-	if (!n)
-		return (-1);
 
 	n2 = n;
 
