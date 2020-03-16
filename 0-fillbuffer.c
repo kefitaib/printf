@@ -31,10 +31,13 @@ i++;
 while (format[i] == ' ')
 i++;
 if (format[i] == '\0')
-return (-1);
-if (format[i] != '%' && format[i] != '\0')
 {
-j = 0;
+if (i == 0)
+return (-1);
+return (len + *k);
+}
+if (format[i] != '%' && format[i] != '\0')
+{ j = 0;
 while (form[j].fo)
 {
 if (format[i] == *(form[j]).fo)
