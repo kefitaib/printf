@@ -19,7 +19,7 @@ void charPrint(va_list l, char *buffer, int *k, int *len)
 		*len += clearBuffer(buffer, k);
 
 	c = va_arg(l, int);
-	if (c != NULL)
+	if (c)
 	{
 		buffer[*k] = c;
 		*k += 1;
