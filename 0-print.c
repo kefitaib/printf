@@ -18,6 +18,8 @@ int _printf(const char *format, ...)
 	f_t form[] = {
 		{"c", charPrint},
 		{"s", stringPrint},
+		{"d", integerPrint},
+		{"i", integerPrint},
 		{NULL, NULL}
 	};
 
