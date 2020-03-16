@@ -6,6 +6,7 @@
  * @l : list of arguments.
  * @buffer : string to prints.
  * @k : the current index  of the first empty element.
+ * @len : length of the string to print.
  * Return: void.
  */
 
@@ -25,6 +26,7 @@ void charPrint(va_list l, char *buffer, int *k, int *len)
  * @l : list of arguments.
  * @buffer : string to prints.
  * @k : the current index  of the first empty element.
+ * @len : length of the string to print.
  * Return : void.
  */
 

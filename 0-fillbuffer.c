@@ -7,7 +7,7 @@
  * @form : strusture that contain fonctions.
  * @list : list of arguments.
  * @buffer : string to prints.
- * @kk : index of the first empty case.
+ * @k : index of the first empty case.
  * Return: void.
  */
 

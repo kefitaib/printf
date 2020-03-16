@@ -15,7 +15,7 @@ typedef struct f
 	void (*x)(va_list, char *, int *, int *);
 } f_t;
 
-int clearBuffer(char *buffer , int *k);
+int clearBuffer(char *buffer, int *k);
 int _printf(const char *format, ...);
 void charPrint(va_list l, char *buffer, int *k, int *len);
 void stringPrint(va_list l, char *buffer, int *k, int *len);

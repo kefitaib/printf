@@ -7,9 +7,9 @@
  * Return: buffer size.
  */
 
-int clearBuffer(char *buffer , int *k)
+int clearBuffer(char *buffer, int *k)
 {
-     write (1, buffer, 1024);
-     *k = 0;
-     return (1024);
+	write(1, buffer, 1024);
+	*k = 0;
+	return (1024);
 }
