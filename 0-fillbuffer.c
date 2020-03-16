@@ -32,7 +32,7 @@ while (format[i] == ' ')
 i++;
 if (format[i] == '\0')
 {
-if (i == 0)
+if (*k == 0)
 return (-1);
 return (len + *k);
 }
