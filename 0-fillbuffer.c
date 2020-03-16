@@ -19,7 +19,8 @@ int fillbuffer(const char *format, f_t form[], va_list list, char *buffer,
 
 	while (format[i] != '\0')
 	{
-		for (; format[i] != '\0' && format[i] != '%'; i++, *k += 1)
+		for (; format[i] != '\0' &&
+			     format[i] != '%'; i++, *k += 1)
 		{
 			buffer[*k] = format[i];
 			if (*k == 1024)
@@ -27,24 +28,27 @@ int fillbuffer(const char *format, f_t form[], va_list list, char *buffer,
 		}
 		if (format[i] == '%')
 		{
-			if (format[i + 1] != '%')
+			i++;
+			while (format[i] == ' ' && format[i] != '\0')
+				i++;
+			if (format[i] != '%')
 			{
 				j = 0;
 				while (form[j].fo)
 				{
-					if (format[i + 1] == *(form[j]).fo)
+					if (format[i] == *(form[j]).fo)
 					{
-						form[j].x(list, buffer, k, lenp);
-						i++;
+						form[j].x(list, buffer, k,
+							  lenp);
+						break;
 					}
 					j++;
 				}
 			}
-			else
+			else if (format[i] == '%')
 			{
 				buffer[*k] = '%';
 				*k = *k + 1;
-				i++;
 			}
 			i++;
 		}
