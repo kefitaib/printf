@@ -36,7 +36,7 @@ if (*k == 0)
 return (-1);
 return (len + *k);
 }
-if (format[i] != '%' && format[i] != '\0')
+if (format[i] != '%')
 { j = 0;
 while (form[j].fo)
 {
@@ -48,7 +48,7 @@ return (-1);
 } j++;
 }
 }
-else if (format[i] == '%')
+else
 {
 buffer[*k] = '%';
 *k = *k + 1;
