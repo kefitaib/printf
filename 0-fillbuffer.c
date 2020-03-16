@@ -44,6 +44,7 @@ int fillbuffer(const char *format, f_t form[], va_list list, char *buffer,
 			{
 				buffer[*k] = '%';
 				*k = *k + 1;
+				i++;
 			}
 			i++;
 		}
