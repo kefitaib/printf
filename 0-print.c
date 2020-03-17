@@ -23,6 +23,7 @@ int _printf(const char *format, ...)
 		{"%", percentPrint},
 		{"b", binaryPrint},
 		{"u", unsignedintPrint},
+		{"o", octalPrint},
 		{NULL, NULL}
 	};
 
