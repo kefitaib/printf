@@ -10,8 +10,8 @@
 .Nm #include "holberton.h"
 .Nm int _printf(const char *format, ...);
 .Sh DESCRIPTION          \" Section Header - required - don't modify
-_printf() function takes 2 arguments: a string called format,\
-and a variable that contains an arguments list': arg_list.\ 
+_printf() function takes 2 arguments: a string called format\
+,and a variable that contains an arguments list': arg_list.\ 
 _printf() passes to a function called fillbuffer() a couple of arguments\ 
 the string format that will be passed as her own first argument\
 a structure : that contains on each element a character that will be compared\
