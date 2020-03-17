@@ -21,6 +21,11 @@ int _printf(const char *format, ...)
 		{"d", integerPrint},
 		{"i", integerPrint},
 		{"%", percentPrint},
+		{"b", binaryPrint},
+		{"u", unsignedintPrint},
+		{"o", octalPrint},
+		{"x", hexaPrint},
+		{"X", hexaUpperPrint},
 		{NULL, NULL}
 	};
 
@@ -28,7 +33,8 @@ int _printf(const char *format, ...)
 	if (!format)
 		return (-1);
 	va_start(list, format);
-
+	if (list == NULL)
+		return (-1);
 	buffer = malloc(1024);
 	if (!buffer)
 		return (-1);
