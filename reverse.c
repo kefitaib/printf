@@ -95,30 +95,6 @@ int rot13(va_list l, char *buffer, int *k, int *len)
 
 
 /**
- * convert - append the buffer with the current parameter.
- * @hex : string of the HEX code number.
- * @tab : string of HEX code.
- * @c : the none printable caracter.
- * Return: integer.
- */
-
-
-void convert(char hex[], char tab[], char c)
-{
-	int i, n;
-
-	n = c;
-	i = 3;
-	while (n != 0)
-	{
-		tab[i] = hex[n % 16];
-		n /= 16;
-		i--;
-	}
-}
-
-
-/**
  * SsStringPrint - append the buffer with the current parameter.
  * @l : list of arguments.
  * @buffer : string to prints.
@@ -131,7 +107,7 @@ void convert(char hex[], char tab[], char c)
 int SsStringPrint(va_list l, char *buffer, int *k, int *len)
 {
 	char *s, str[6] = "(null)";
-	int j, x = 0;
+	int j, x = 0, n, i;
 	char hex[] = "0123456789ABCDEF", tab[] = {92, 'x', '0', '0'};
 
 	s = va_arg(l, char *);
@@ -139,21 +115,26 @@ int SsStringPrint(va_list l, char *buffer, int *k, int *len)
 	{
 		for (j = 0 ; s[j] != '\0' ; j++, *k += 1)
 		{
+			if (*k == 1024)
+				*len += clearBuffer(buffer, k);
 			if (s[j] >= 32 && s[j] < 127)
 			{
-				if (*k == 1024)
-					*len += clearBuffer(buffer, k);
 				buffer[*k] = s[j];
 			} else
 			{
-				convert(hex, tab, s[j]);
-				while (x < 4)
+				n = s[j];
+				i = 3;
+				while (n != 0)
 				{
+					tab[i] = hex[n % 16];
+					n /= 16;
+					i--;
+				}
+				for (x = 0; x < 4; x++, *k += 1)
+				{
+					buffer[*k] = tab[x];
 					if (*k == 1024)
 						*len += clearBuffer(buffer, k);
-					buffer[*k] = tab[x];
-					*k += 1;
-					x++;
 				} *k -= 1;
 			}
 		} return (0);
