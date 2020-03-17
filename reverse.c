@@ -109,7 +109,7 @@ int SsStringPrint(va_list l, char *buffer, int *k, int *len)
 {
 	char *s, str[6] = "(null)";
 	int j, x = 0, n, i;
-	char hex[] = "0123456789ABCDEF", tab[] = {92, 'x', '0', '0'};
+	char hex[] = "0123456789ABCDEF", tab[] = {'\\', 'x', '0', '0'};
 
 	s = va_arg(l, char *);
 	if (s)
