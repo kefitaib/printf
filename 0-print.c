@@ -26,6 +26,7 @@ int _printf(const char *format, ...)
 		{"o", octalPrint},
 		{"x", hexaPrint},
 		{"X", hexaUpperPrint},
+		{"S", SsStringPrint},
 		{NULL, NULL}
 	};
 
@@ -33,7 +34,6 @@ int _printf(const char *format, ...)
 	if (!format)
 		return (-1);
 	va_start(list, format);
-
 	buffer = malloc(1024);
 	if (!buffer)
 		return (-1);
