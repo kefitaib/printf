@@ -118,9 +118,8 @@ int SsStringPrint(va_list l, char *buffer, int *k, int *len)
 			if (*k == 1024)
 				*len += clearBuffer(buffer, k);
 			if (s[j] >= 32 && s[j] < 127)
-			{
 				buffer[*k] = s[j];
-			} else
+			else
 			{
 				n = s[j];
 				i = 3;
