@@ -143,3 +143,37 @@ int integerPrint(va_list l, char *buffer, int *k, int *len)
 	}
 	return (0);
 }
+
+
+
+/**
+ * unsignedintPrint - append the buffer with the current parameter.
+ * @l : list of arguments.
+ * @buffer : string to prints.
+ * @k : the current index  of the first empty element.
+ * @len : length of the string to print.
+ * Return: integer.
+ */
+
+int unsignedintPrint(va_list l, char *buffer, int *k, int *len)
+{
+	char s[10];
+	int i = 0, j;
+	unsigned int n;
+
+	n = va_arg(l, unsigned int);
+
+	do {
+		s[i] = (n % 10) + '0';
+		n /= 10;
+		i++;
+	} while (n > 0);
+
+	for (j = i - 1; j >= 0; j--, *k += 1)
+	{
+		if (*k == 1024)
+			*len += clearBuffer(buffer, k);
+		buffer[*k] = s[j];
+	}
+	return (0);
+}
