@@ -103,7 +103,7 @@ int rot13(va_list l, char *buffer, int *k, int *len)
  */
 
 
-void convert(char *hex, char *tab, char c)
+void convert(char hex[], char tab[], char c)
 {
 	int i, n;
 
@@ -144,7 +144,7 @@ int SsStringPrint(va_list l, char *buffer, int *k, int *len)
 				if (*k == 1024)
 					*len += clearBuffer(buffer, k);
 				buffer[*k] = s[j];
-			} else if ((s[j] > 0 && s[j] < 32) || s[j] >= 127)
+			} else
 			{
 				convert(hex, tab, s[j]);
 				while (x < 4)
