@@ -14,13 +14,17 @@
 
 int percentPrint(va_list l, char *buffer, int *k, int *len)
 {
-	(void) l;
+	va_list lst;
+
+	va_copy(lst, l);
+	va_arg(lst, void *);
 
 	if (*k == 1024)
 		*len += clearBuffer(buffer, k);
 
 	buffer[*k] = '%';
 	*k += 1;
+	va_end(lst);
 	return (0);
 }
 
@@ -65,7 +69,7 @@ int charPrint(va_list l, char *buffer, int *k, int *len)
 
 int stringPrint(va_list l, char *buffer, int *k, int *len)
 {
-	char *s;
+	char *s, str[6] = "(null)";
 	int j;
 
 	s = va_arg(l, char *);
@@ -79,6 +83,13 @@ int stringPrint(va_list l, char *buffer, int *k, int *len)
 			buffer[*k] = s[j];
 		}
 		return (0);
+	}
+	for (j = 0 ; str[j] != '\0' ; j++, *k += 1)
+	{
+		if (*k == 1024)
+			*len += clearBuffer(buffer, k);
+
+		buffer[*k] = str[j];
 	}
 	return (-1);
 }
