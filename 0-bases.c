@@ -132,7 +132,7 @@ int hexaPrint(va_list l, char *buffer, int *k, int *len)
 		i++;
 	}
 
-	for(j = i - 1; j >= 0 ; j--, *k += 1)
+	for (j = i - 1; j >= 0 ; j--, *k += 1)
 	{
 		if (*k == 1024)
 			*len += clearBuffer(buffer, k);
@@ -183,7 +183,7 @@ int hexaUpperPrint(va_list l, char *buffer, int *k, int *len)
 		i++;
 	}
 
-	for(j = i - 1; j >= 0 ; j--, *k += 1)
+	for (j = i - 1; j >= 0 ; j--, *k += 1)
 	{
 		if (*k == 1024)
 			*len += clearBuffer(buffer, k);
