@@ -24,6 +24,8 @@ int _printf(const char *format, ...)
 		{"b", binaryPrint},
 		{"u", unsignedintPrint},
 		{"o", octalPrint},
+		{"x", hexaPrint},
+		{"X", hexaUpperPrint},
 		{NULL, NULL}
 	};
 
