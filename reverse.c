@@ -131,13 +131,13 @@ int SsStringPrint(va_list l, char *buffer, int *k, int *len)
 					n /= 16;
 					i--;
 				} x = 0;
+for (x = 0; x < 4; x++, *k += 1)
+{
+if (*k == 1024)
+*len += clearBuffer(buffer, k);
+buffer[*k] = tab[x];
+} *k -= 1;
 				tab[2] = '0';
-				while (x < 4)
-				{
-					buffer[*k] = tab[x];
-					*k += 1;
-					x++;
-				} *k -= 1;
 			}
 		} return (0);
 	}
