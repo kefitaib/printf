@@ -136,7 +136,7 @@ int SsStringPrint(va_list l, char *buffer, int *k, int *len)
 					if (*k == 1024)
 						*len += clearBuffer(buffer, k);
 					buffer[*k] = tab[x];
-				}
+				} *k -= 1;
 			}
 		} return (0);
 	}
