@@ -121,7 +121,6 @@ int SsStringPrint(va_list l, char *buffer, int *k, int *len)
 			if (s[j] >= 32 && s[j] < 127)
 			{
 				buffer[*k] = s[j];
-				*k += 1;
 			} else
 			{
 				n = s[j];
@@ -138,6 +137,7 @@ int SsStringPrint(va_list l, char *buffer, int *k, int *len)
 					*k += 1;
 					x++;
 				}
+				*k -= 1;
 			}
 		} return (0);
 	}
