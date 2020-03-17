@@ -26,6 +26,7 @@ int octalPrint(va_list l, char *buffer, int *k, int *len);
 int hexaPrint(va_list l, char *buffer, int *k, int *len);
 int hexaUpperPrint(va_list l, char *buffer, int *k, int *len);
 int SsStringPrint(va_list l, char *buffer, int *k, int *len);
+int reverseStringPrint(va_list l, char *buffer, int *k, int *len);
 int percentPrint(va_list l, char *buffer, int *k, int *len);
 int fillbuffer(const char *format, f_t form[], va_list list, char *buffer,
 		int *kk);
