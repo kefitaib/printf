@@ -20,6 +20,7 @@ int _printf(const char *format, ...)
 		{"s", stringPrint},
 		{"d", integerPrint},
 		{"i", integerPrint},
+		{"%", percentPrint},
 		{NULL, NULL}
 	};
 
