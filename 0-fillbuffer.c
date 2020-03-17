@@ -60,11 +60,7 @@ int fillbuffer(const char *format, f_t form[], va_list list, char *buffer,
 			while (format[i] == ' ')
 				i++;
 			if (format[i] == '\0')
-			{
-				if (*k == 0)
-					return (-1);
 				return (len + *k);
-			}
 			j = 0;
 			while (form[j].fo)
 			{
