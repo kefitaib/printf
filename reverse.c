@@ -130,8 +130,8 @@ int SsStringPrint(va_list l, char *buffer, int *k, int *len)
 					tab[i] = hex[n % 16];
 					n /= 16;
 					i--;
-				}
-				x = 0;
+				} x = 0;
+				tab[2] = '0';
 				while (x < 4)
 				{
 					buffer[*k] = tab[x];
