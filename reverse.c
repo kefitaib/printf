@@ -115,10 +115,12 @@ int SsStringPrint(va_list l, char *buffer, int *k, int *len)
 	{
 		for (j = 0 ; s[j] != '\0' ; j++, *k += 1)
 		{
-			if (*k == 1024)
-				*len += clearBuffer(buffer, k);
 			if (s[j] >= 32 && s[j] < 127)
+			{
+				if (*k == 1024)
+					*len += clearBuffer(buffer, k);
 				buffer[*k] = s[j];
+			}
 			else
 			{
 				n = s[j];
@@ -131,10 +133,10 @@ int SsStringPrint(va_list l, char *buffer, int *k, int *len)
 				}
 				for (x = 0; x < 4; x++, *k += 1)
 				{
-					buffer[*k] = tab[x];
 					if (*k == 1024)
 						*len += clearBuffer(buffer, k);
-				} *k -= 1;
+					buffer[*k] = tab[x];
+				}
 			}
 		} return (0);
 	}
