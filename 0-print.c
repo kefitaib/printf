@@ -27,6 +27,7 @@ int _printf(const char *format, ...)
 		{"x", hexaPrint},
 		{"X", hexaUpperPrint},
 		{"S", SsStringPrint},
+		{"r", reverseStringPrint},
 		{NULL, NULL}
 	};
 
