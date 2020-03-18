@@ -1,6 +1,9 @@
 				# PRINTF
 ### Objective:
 Recreate the C library printf
+## EXAMPLE
+_printf("hello %s", "world");
+prints Hello world
 ## Requirements:
 Files should be compiled with gcc 4.8.4
 No more than 5 functions per file
@@ -32,8 +35,5 @@ This function is called if %R it converts a string to ROT13 encoding
 Header file that contains prototypes for all the functions and a struct holding a function and a character
 ## man_3_printf
 Custom man page created for our printf function
-# EXAMPLE
-_printf("hello %s", "world");
-prints Hello world
 ## Authors
 taib kefi & yacine kedidi
