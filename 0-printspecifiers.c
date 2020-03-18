@@ -14,7 +14,7 @@
 
 int percentPrint(va_list l, char *buffer, int *k, int *len)
 {
-        (void) l;
+	(void) l;
 
 	if (*k == 1024)
 		*len += clearBuffer(buffer, k);
