@@ -14,17 +14,13 @@
 
 int percentPrint(va_list l, char *buffer, int *k, int *len)
 {
-	va_list lst;
-
-	va_copy(lst, l);
-	va_arg(lst, void *);
+        (void) l;
 
 	if (*k == 1024)
 		*len += clearBuffer(buffer, k);
 
 	buffer[*k] = '%';
 	*k += 1;
-	va_end(lst);
 	return (0);
 }
 
