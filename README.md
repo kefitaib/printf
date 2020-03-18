@@ -1,5 +1,5 @@
-				# PRINTF
-### Objective:
+# PRINTF
+## Objective:
 Recreate the C library printf
 ## EXAMPLE
 _printf("hello %s", "world");
