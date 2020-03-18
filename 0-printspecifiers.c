@@ -1,6 +1,6 @@
 #include <stdarg.h>
 #include "holberton.h"
-
+#include <stdlib.h>
 /**
  * percentPrint- append the buffer with the current parameter.
  * @l : list of arguments.
@@ -48,13 +48,10 @@ int charPrint(va_list l, char *buffer, int *k, int *len)
 		*len += clearBuffer(buffer, k);
 
 	c = va_arg(l, int);
-	if (c)
-	{
+
 		buffer[*k] = c;
 		*k += 1;
 		return (0);
-	}
-	return (-1);
 }
 
 
