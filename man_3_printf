@@ -1,24 +1,24 @@
-.Dd 16/03/2020        
-.Dt _PRINTF      \" Program name and manual section number
+.Dd 17/03/2020
+.TH man 3 "17 March 2018" "3.00" "_printf man page"
 .Os
-.Sh NAME                 
+.Sh NAME
 .Nm _printf
 .Nd a function that produces output according to a format.
 .Sh LIBRARY              \" Section Header - required - don't modify
-.Nd Our holberton.h 
+.Nd Our holberton.h
 .Sh SYNOPSIS             \" Section Header - required - don't modify
 .Nm #include "holberton.h"
 .Nm int _printf(const char *format, ...);
 .Sh DESCRIPTION          \" Section Header - required - don't modify
 _printf() function takes 2 arguments: a string called format\
-,and a variable that contains an arguments list': arg_list.\ 
-_printf() passes to a function called fillbuffer() a couple of arguments\ 
+,and a variable that contains an arguments list': arg_list.\
+_printf() passes to a function called fillbuffer() a couple of arguments\
 the string format that will be passed as her own first argument\
 a structure : that contains on each element a character that will be compared\
 to the specifier (that comes after '%') inside the format string and for every specifier our\ structure has the adequate \
 function to print it which is indicated with the '%' symbol. If found. _printf() uses the pointer to that specifier function to call the specifier function on the next\
 queued argument from the arg_list. Each specifier function stores a character\
-in a string variable that has for maximum size 1024 bytes. every time we store\ 
+in a string variable that has for maximum size 1024 bytes. every time we store\
 a charcater we test if our buffer has reached its size limit if so\
 we write tp the output the 1024 charcter our buffer string contains and we reset the buffer\ 
 index to 0 to continue filling it with other charcaters \
@@ -26,6 +26,11 @@ once finished with the fillbuffer() function out printf returns the number of ch
 that we have written to the standard output .\
 
 .TH
+
+.SH RETURN
+The function will return the number of characters printed. If unsuccessful the function will return null.
+.SH EXAMPLES
+To print "Today is Thursday" you would do as follow, where day is a pointer to a string:
 
 .Nm THE FLAG CHARACTERS
 .SH ""
