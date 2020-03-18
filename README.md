@@ -1,4 +1,4 @@
-# PRINTF
+				# PRINTF
 ### Objective:
 Recreate the C library printf
 ## Requirements:
@@ -32,5 +32,8 @@ This function is called if %R it converts a string to ROT13 encoding
 Header file that contains prototypes for all the functions and a struct holding a function and a character
 ## man_3_printf
 Custom man page created for our printf function
+# EXAMPLE
+_printf("hello %s", "world");
+prints Hello world
 ## Authors
 taib kefi & yacine kedidi
